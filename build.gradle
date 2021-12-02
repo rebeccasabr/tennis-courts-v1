@@ -43,3 +43,9 @@ dependencies {
     implementation group: 'org.mapstruct', name: 'mapstruct-jdk8', version: '1.2.0.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.2.0.Final'
 }
+
+task(runDebug, dependsOn: 'classes', type: JavaExec) {
+    main = "com.mything.server.HttpServer"
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = ["-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"]
+}
