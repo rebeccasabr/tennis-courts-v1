@@ -32,4 +32,9 @@ public class ScheduleService {
     public List<ScheduleDTO> findSchedulesByTennisCourtId(Long tennisCourtId) {
         return scheduleMapper.map(scheduleRepository.findByTennisCourt_IdOrderByStartDateTime(tennisCourtId));
     }
+    
+   
+    public List<ScheduleDTO> findAllSchedule() {
+    	return null;
+    }
 }
