@@ -2,11 +2,22 @@ package com.tenniscourts.reservations;
 
 import com.tenniscourts.config.BaseRestController;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/reservations/v1")
+@Configuration
+@ComponentScan("com.tenniscourts.reservations")
 @AllArgsConstructor
 public class ReservationController extends BaseRestController {
-
+                  @Autowired
     private final ReservationService reservationService;
 
     public ResponseEntity<Void> bookReservation(CreateReservationRequestDTO createReservationRequestDTO) {
@@ -16,7 +27,8 @@ public class ReservationController extends BaseRestController {
     public ResponseEntity<ReservationDTO> findReservation(Long reservationId) {
         return ResponseEntity.ok(reservationService.findReservation(reservationId));
     }
-
+@Override
+@RequestMapping(value = "/cancelReservation/",method = RequestMethod.DELETE )
     public ResponseEntity<ReservationDTO> cancelReservation(Long reservationId) {
         return ResponseEntity.ok(reservationService.cancelReservation(reservationId));
     }

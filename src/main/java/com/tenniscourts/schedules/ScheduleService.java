@@ -1,6 +1,8 @@
 package com.tenniscourts.schedules;
 
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -9,7 +11,8 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class ScheduleService {
-
+	
+                 @Autowired
     private final ScheduleRepository scheduleRepository;
 
     private final ScheduleMapper scheduleMapper;
@@ -35,6 +38,6 @@ public class ScheduleService {
     
    
     public List<ScheduleDTO> findAllSchedule() {
-    	return null;
+    	return scheduleMapper.map(scheduleRepository.findAll());
     }
-}
+} 

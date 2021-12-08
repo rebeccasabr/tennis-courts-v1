@@ -13,7 +13,8 @@ import java.time.temporal.ChronoUnit;
 @Service
 @AllArgsConstructor
 public class ReservationService {
-
+	
+                 @Autowired
     private final ReservationRepository reservationRepository;
 
     private final ReservationMapper reservationMapper;

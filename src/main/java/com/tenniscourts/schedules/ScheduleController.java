@@ -42,13 +42,13 @@ public class ScheduleController extends BaseRestController {
         return ResponseEntity.ok(scheduleService.findSchedule(scheduleId));
     }
     
-    //
+    
     @Override
 	@RequestMapping(value = "/find/all", method =  RequestMethod.GET)
     public ResponseEntity<List<ScheduleDTO>> findAllSchedule(){
-    	
-    	
     	return ResponseEntity.ok(scheduleService.findAllSchedule());
     	
     }
+    
+    
 }
