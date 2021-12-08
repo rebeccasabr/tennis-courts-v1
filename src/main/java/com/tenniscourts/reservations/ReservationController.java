@@ -27,7 +27,7 @@ public class ReservationController extends BaseRestController {
     public ResponseEntity<ReservationDTO> findReservation(Long reservationId) {
         return ResponseEntity.ok(reservationService.findReservation(reservationId));
     }
-@Override
+
 @RequestMapping(value = "/cancelReservation/",method = RequestMethod.DELETE )
     public ResponseEntity<ReservationDTO> cancelReservation(Long reservationId) {
         return ResponseEntity.ok(reservationService.cancelReservation(reservationId));
