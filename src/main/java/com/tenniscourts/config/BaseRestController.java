@@ -20,13 +20,4 @@ public class BaseRestController {
     }
 
 
-  //public ResponseEntity<List<ScheduleDTO>> findAllSchedule() {
-	// TODO Auto-generated method stub
-//	return null;
-  //}
-
-//public ResponseEntity<Void> addScheduleTennisCourt(CreateScheduleRequestDTO createScheduleRequestDTO) {
-	// TODO Auto-generated method stub
-//	return null;
-//}
 }
