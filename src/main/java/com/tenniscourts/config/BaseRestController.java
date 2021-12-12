@@ -3,6 +3,7 @@ package com.tenniscourts.config;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.tenniscourts.schedules.CreateScheduleRequestDTO;
 import com.tenniscourts.schedules.ScheduleDTO;
 
 import springfox.documentation.annotations.ApiIgnore;
@@ -18,8 +19,14 @@ public class BaseRestController {
                 "/{id}").buildAndExpand(entityId).toUri();
     }
 
+
   public ResponseEntity<List<ScheduleDTO>> findAllSchedule() {
 	// TODO Auto-generated method stub
 	return null;
   }
+
+public ResponseEntity<Void> addScheduleTennisCourt(CreateScheduleRequestDTO createScheduleRequestDTO) {
+	// TODO Auto-generated method stub
+	return null;
+}
 }
