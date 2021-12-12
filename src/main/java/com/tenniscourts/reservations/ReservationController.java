@@ -19,20 +19,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReservationController extends BaseRestController {
                   @Autowired
     private final ReservationService reservationService;
-
+//Para acessar as documentações das API'S com swagger,acessar a url:http://127.0.0.1:8080/swagger-ui.html, pois as dependencias do wagger encontra-se no arquivo build.gradle
     @RequestMapping(value = "/created/bookReservation",method = RequestMethod.POST)             
     public ResponseEntity<Void> bookReservation(CreateReservationRequestDTO createReservationRequestDTO) {
         return ResponseEntity.created(locationByEntity(reservationService.bookReservation(createReservationRequestDTO).getId())).build();
     }
+ //Para acessar as documentações das API'S com swagger,acessar a url:http://127.0.0.1:8080/swagger-ui.html, pois as dependencias do wagger encontra-se no arquivo build.gradle
     @RequestMapping(value = "/findReservation/",method = RequestMethod.GET)
     public ResponseEntity<ReservationDTO> findReservation(Long reservationId) {
         return ResponseEntity.ok(reservationService.findReservation(reservationId));
     }
-
+//Para acessar as documentações das API'S com swagger,acessar a url:http://127.0.0.1:8080/swagger-ui.html, pois as dependencias do wagger encontra-se no arquivo build.gradle
     @RequestMapping(value = "/cancelReservation/",method = RequestMethod.DELETE )
     public ResponseEntity<ReservationDTO> cancelReservation(Long reservationId) {
         return ResponseEntity.ok(reservationService.cancelReservation(reservationId));
     }
+ //Para acessar as documentações das API'S com swagger,acessar a url:http://127.0.0.1:8080/swagger-ui.html, pois as dependencias do wagger encontra-se no arquivo build.gradle
     @RequestMapping(value = "/rescheduleReservation/", method = RequestMethod.PUT)
     public ResponseEntity<ReservationDTO> rescheduleReservation(Long reservationId, Long scheduleId) {
         return ResponseEntity.ok(reservationService.rescheduleReservation(reservationId, scheduleId));
