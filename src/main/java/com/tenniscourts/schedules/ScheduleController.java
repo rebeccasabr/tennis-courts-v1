@@ -27,7 +27,7 @@ public class ScheduleController extends BaseRestController {
     private final ScheduleService scheduleService;
 
     //TODO: implement rest and swagger
-	@Override
+	//@Override
 	@RequestMapping(value = "/addScheduleTennisCourt/",method = RequestMethod.POST)
     public ResponseEntity<Void> addScheduleTennisCourt(CreateScheduleRequestDTO createScheduleRequestDTO) {
         return ResponseEntity.created(locationByEntity(scheduleService.addSchedule(createScheduleRequestDTO.getTennisCourtId(), createScheduleRequestDTO).getId())).build();
@@ -46,7 +46,7 @@ public class ScheduleController extends BaseRestController {
     }
     
     
-    @Override
+    //@Override
 	@RequestMapping(value = "/findAllSchedule/", method =  RequestMethod.GET)
     public ResponseEntity<List<ScheduleDTO>> findAllSchedule(){
     	return ResponseEntity.ok(scheduleService.findAllSchedule());
